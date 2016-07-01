@@ -13,11 +13,17 @@
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script type="text/javscript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="{% static 'js/journal.js' %}"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/resources/demos/style.css">
 </head>
+
 <body>
     <div id ="wrapper">
         <div class="container-fluid">
-            <div class="row" id='header'> 
+            <div class="row" id='header'>
                 <img id='logo' class='col-xs-1' src="{% static 'img/omgoalslogo.png' %}" />
                 <div class='col-xs-9'>
                     <div id='toolbar' role='toolbar'>
@@ -32,42 +38,98 @@
                 </div>
             </div>
 
-            <div id="content">
-                <h1>Journal!</h1>
-<!--
-                <div class='tabs' id='statictabs'>
-                 <ul class='tabs'>
-                    <li><a href='#tab1'>Tab 1</a></li>
-                    <li><a href='#tab2'>Tab 2</a></li>
-                    <li><a href='#tab3'>Tab 3</a></li>
+            <div class='row' id="page_title">
+                <h1 class="col-xs-2 col-xs-offset-2">JOURNAL</h1>
+            </div>
+
+            <div class='row' id="content">
+                <div class="col-xs-2"></div>
+                <div class="ui-widget-header ui-corner-top col-xs-5" id="tabs">
+                  <ul>
+                    <li><a href="#tabs-1">08/15/2010</a></li>
+                    <li><a href="#tabs-2">09/15/1999</a></li>
+                    <li><a href="#tabs-3">04/20/1554</a></li>
+                    <li><a href="#tabs-4">09/15/1999</a></li>
                   </ul>
-                  <div id='tab1'>
-                    <p>Hi, this is the first tab.</p>
+                  <div id="tabs-1">
+                    <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
                   </div>
-                  <div id='tab2'>
-                    <p>This is the 2nd tab.</p>
+                  <div id="tabs-2">
+                    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
                   </div>
-                  <div id='tab3'>
-                    <p>And this is the 3rd tab.</p>
+                  <div id="tabs-3">
+                    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                    <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+                  </div>
+                  <div id="tabs-4">
+                    <p>you kno wha ah sayin</p>
+                  </div>
+                </div>
+
+            <div class="col-xs-3" id="accordion">
+                <h3>Current Goals</h3>
+                    <div>
+                        <p>Goal 1</p>
+                        <p>Goal 2</p>
+                        <p>Goal 3</p>
+                        <p>Goal 4</p>
+                    </div>
+              <h3>Completed Goals</h3>
+                  <div>
+                        <p>Goal 1</p>
+                        <p>Goal 2</p>
+                        <p>Goal 3</p>
+                  </div>
+              <h3>Other</h3>
+              <div>
+                  <div>
+                        <p>Goal 1</p>
+                        <p>Goal 2</p>
+                        <p>Goal 3</p>
                   </div>
               </div>
-            </div>-->
-   <div id="main">
-                <div class="ui-widget-header ui-corner-top">
-                    <ul>
-                        <li><a href="#tabs-1">My Databases</a></li>
-                        <li><a href="#tabs-2">Database Stats</a></li>
-                    </ul>
+            </div>
+            <div class="col-xs-2"></div>
+            </div>
+
+            <div class='row' id="page_title">
+                <h1 class="col-xs-2 col-xs-offset-2">NEW ENTRY</h1>
+            </div>
+
+            <form class="form-horizontal">
+                <div class='row' id="journal_entry">
+                    <div class="form-group">
+                        <label for="due_date" class="col-xs-2 control-label">Date</label>
+                        <div class="col-xs-5">
+                            <input class="form-control" type="date" id="due_date" name='due_date'/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal" class="col-xs-2 control-label">Goal</label>
+                        <div class='col-xs-5'>
+                            <select class="form-control" id="goal" name='goal'>
+                                <option>--</option>
+                                <option value="goal1">Goal 1</option>
+                                <option value="goal2">Goal 2</option>
+                                <option value="goal3">Goal 3</option>
+                                <option value="goal4">Goal 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text_entry" class="col-xs-2 control-label">Journal Entry</label>
+                        <div class="col-xs-5">
+                            <textarea class="form-control" id="text_entry" placeholder="&ldquo;Today I worked towards my goal to...&rdquo;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-9">
+                            <input type='submit' id="submit" type='button' class='btn btn-primary' value='Submit'>
+                        </div>
+                    </div>
                 </div>
-                
-                <div id="tabs-1" class="tabs3">
-                    <p>Database stats</p>
-                </div>
-                
-                <div id="tabs-2" class="tabs3">
-                    <p>You could not be registered due to a system error. We apologize for any inconvenience.</p>
-                </div>
-    </div>
+            </form>
+
 
             <div id="footer">
                <div class='col-xs-3 col-xs-offset-1'id='copyright'>

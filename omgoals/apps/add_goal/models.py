@@ -12,10 +12,38 @@ class GoalManager(models.Manager):
         animal = Animal.objects.get(name=animal_name)
         GoalAnimal.objects.create(goal_id=this_goal, animal_id=animal, current_image=animal.image)
 
+    def progress(self, goal_id):
+        goal = self.get(id=goal_id)
+        milestones = Milestone.objects.filter(goal_id=goal)
+        total = len(milestones)
+        count = 0
+        for milestone in milestones:
+            if (milestone.completed == True):
+                count += 1
+        try:
+            print count
+            print (count*100)/total
+            return (count*100)/total
+        except:
+            return 1
+
+    def nextMilestone(self, goal_id):
+        goal = self.get(id=goal_id)
+        milestones = Milestone.objects.filter(goal_id=goal)
+        for milestone in milestones:
+            if (milestone.completed == False):
+                return milestone.title
+
+    def getAnimal(self, goal_id):
+        goal = self.get(id=goal_id)
+        goal_animal = GoalAnimal.objects.get(goal_id=goal)
+        return goal_animal.current_image
+
 class MilestonelManager(models.Manager):
     def insert_milestone(self, title, goal_id):
         goal = Goal.objects.get(id=goal_id)
         self.create(title=title, goal_id=goal)
+
 
 # Create your models here.
 class Category(models.Model):

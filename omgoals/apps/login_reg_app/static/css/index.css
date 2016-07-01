@@ -40,9 +40,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #computer {
-    margin-top: 15px;
-    height: 260px;
-    width: 520px;
+    width: 100%;
+    height: auto;
 }
 
 #registration {
@@ -85,11 +84,11 @@ html {
     font-weight: 300;
     text-transform: uppercase;
 }
- 
+
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 0 none;
 }
- 
+
 .btn:hover, .btn:focus, .btn:active, .btn.active, .open > .dropdown-toggle.btn {
     background: #eb837f;
 }

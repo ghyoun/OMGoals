@@ -1,0 +1,103 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic);
+
+body {
+    background-color: #ecebeb;
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+
+#header {
+    background-image: url("../img/header.jpg");
+    background-repeat: repeat-x;
+    color: white;
+    height: 80px;
+}
+    #logo {
+        height: 70px !important;
+        width: auto !important;
+    }
+
+    #header #toolbar{
+        margin-top: 18px;
+        border-radius:5px;
+    }
+
+#content {
+    padding: 30px;
+}
+
+.btn {
+    padding-right: 10px;
+    background-color: #76C7C0;
+    border: none;
+    color: white;
+    border: 0 none;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn:hover, .btn:focus, .btn:active, .btn.active, .open > .dropdown-toggle.btn {
+    background: #51b8af;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    color: white;
+    text-decoration: none;
+}
+
+#edit_profile {
+    margin-top: 2em;
+    background: #e3524d;
+}
+
+#edit_profile:hover {
+    background: #eb837f;
+}
+
+/* Footer CSS below! */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 116px; /* bottom = footer height */
+    /*padding: 25px;*/
+}
+
+#footer {
+    background-image: url("../img/footer.jpg");
+    background-repeat: repeat-x;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 116px;
+    width: 100%;
+    overflow:hidden;
+    /* footer content*/
+    color: white;
+    font-variant: small-caps;
+    padding-top: 1em;
+}
+
+#socialmed {
+    text-align: right;
+    padding-right: 50px;
+}
+
+#copyright {
+    padding-top: 30px;
+}
+/* end of footer CSS */

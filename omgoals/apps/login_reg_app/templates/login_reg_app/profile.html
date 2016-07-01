@@ -2,24 +2,55 @@
 <html>
 <head>
 	<title>Profile</title>
+	{% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{{STATIC_URL}}/favicon"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div id="container">
-	<div class="top">
-		<a href="{%url 'edit_profile'%}">Edit Profile</a>
-	</div>
-	<div class="main">
-		{%for info in profile%}
-			<h2>Username: {{info.alias}}</h2>
-			<h2>First Name: {{info.first_name}}</h2>
-			<h2>Last Name: {{info.last_name}}</h2>
-			<h2>Email: {{info.email}}</h2>
-		{%endfor%}
-		
-		<div class="collection"></div>
+	<div id ="wrapper">
+		<div id="container-fluid">
+			<div class="row" id='header'>
+                <img id='logo' class='col-xs-1' src="{% static 'img/omgoalslogo.png' %}" />
+                <div class='col-xs-9'>
+                    <div id='toolbar' role='toolbar'>
+                        <button type='button' class='btn btn-secondary'><a href="{%url 'dash'%}">Today</a></button>
+    					<button type='button' class='btn btn-secondary'><a href="{%url 'add_goal'%}">Add</a></button>
+    					<button type='button' class='btn btn-secondary active'><a href="{%url 'profile'%}">Profile</a></button>
+    					<button type='button' class='btn btn-secondary'><a href="{%url 'journal'%}">Journal</a></button>
+    					<button type='button' class='btn btn-secondary'><a href="{%url 'achieved_page'%}">Achieved</a></button>
+                        <button id='store' type='button' class='btn btn-secondary'>Store</button>
+                        <a href="{%url 'logout'%}"><button id='logout' type='button' class='btn btn-primary'>Log Out</button></a>
+                    </div>
+                </div>
+            </div>
 
-	</div>
+			<div class='row' id="content">
+				<div class='col-xs-1'></div>
+				<div class='col-xs-6'>
+					{%for info in profile%}
+						<h2>Username: {{info.alias}}</h2>
+						<h2>First Name: {{info.first_name}}</h2>
+						<h2>Last Name: {{info.last_name}}</h2>
+						<h2>Email: {{info.email}}</h2>
+					{%endfor%}
+					<a href="{%url 'edit_profile'%}"><button id="edit_profile" class='btn btn-primary'>Edit Profile</button></a>
+				</div>
+				<div class='col-xs-5'></div>
+			</div>
+			</div>
 
-</div>
+		    <div id="footer">
+                <div class='col-xs-3 col-xs-offset-1'id='copyright'>
+                    &copy; OH MY GOALS 2016
+                </div>
+                <div id='socialmed' >
+                    <img src="{% static 'img/socialmediaicons.png' %}" />
+                </div>
+            </div>
+		</div>
+	</div>
 </body>
 </html>

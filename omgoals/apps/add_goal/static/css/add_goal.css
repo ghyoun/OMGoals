@@ -65,6 +65,14 @@ a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
 
+#create {
+    background: #e3524d;
+}
+
+#create:hover {
+    background: #eb837f;
+}
+
 /* Footer CSS below! */
 html {
     position: relative;

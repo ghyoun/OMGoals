@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic);
 
-body {
+body, p {
     background-color: #ecebeb;
     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 12pt;
@@ -11,6 +11,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
     margin-bottom: 5px;
+}
+
+#page_title {
+    margin-top: 20px;
 }
 
 #header {
@@ -29,6 +33,24 @@ h1, h2, h3, h4, h5, h6 {
         margin-top: 18px;
         border-radius:5px;
     }
+
+#content {
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+#journal_entry {
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+
+#submit {
+    background: #e3524d;   
+}
+
+#submit:hover {
+    background: #eb837f;
+}
 
 .btn {
     padding-right: 10px;
@@ -89,57 +111,82 @@ body {
 }
 /* end of footer CSS */
 
-/* tab CSS*/
-#main {
-    margin-top: 50px;
-    position: relative;
-    padding: 0;
-}
-.ui-tabs-nav {
-    background-color: #222 !important; /*To overwrite jquery-ui.css*/
-    height: 30px;                        /*To stop nav block scaling of tab size*/
+/* tab & accordion CSS*/
+.ui-widget-header div, .ui-widget-header {
+    background: #ecebeb !important;
+    font-weight: none !important;
+    padding: 0 !important;
 }
 
-.ui-tabs .ui-tabs-nav {
+.ui-state-default {
+    background: #e3524d !important;
+    padding: 0.5em !important;
+    margin: 5px !important;
+}
+
+
+.ui-state-hover {
+    background: #eb837f !important;
+}
+
+.ui-state-active {
+    background: #FFFFFF !important;
+    border: none;
+}
+
+#tabs {
+    margin-right: 70px;
+}
+
+#tabs, ul {
+    background: #ecebeb !important;
+    border: none !important;
+}
+
+#tabs .ui-state-default a {
+    color: #FFFFFF !important;   
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+#tabs .ui-state-active a {
+    color: black !important;   
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#tabs p {
+    background-color: white;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
     margin: 0;
-    padding: 0.2em 0.2em 0;
-    border: none;
-    background: none;
-    border-radius: 2px 2px 0 0; /*To affect only top corners*/
+    font-weight: normal;
 }
 
-.ui-tabs .ui-tabs-nav li {
-    position: relative;    /*To overwrite jquery-ui.css*/
-    top: -10px !important;  /*To overwrite jquery-ui.css*/
-    border: none;
-    margin: 0 0 -5px 0;
-    background: none;
-}
-.ui-tabs-anchor{
-    color: white !important;                  /*To overwrite jquery-ui.css*/
-    text-decoration: underline !important;    /*To overwrite jquery-ui.css*/
-}
-#main ul.ui-widget-header, #main ul.ui-widget-content, #main ul.ui-state-default, #main ul.ui-state-hover {
-    background: none;
-    border: none
+#accordion {
+    width: 300px;
 }
 
-#main .ui-tabs-active a {
-   -moz-border-bottom-colors: none;
-   -moz-border-left-colors: none;
-   -moz-border-right-colors: none;
-   -moz-border-top-colors: none;
-   background-color: white;        /*To make it looks like on example pic, it is possible do do with it whatever you want*/
-   border-color: #CCCCCC;
-   border-style: solid;
-   border-width: 1px 1px 0;
-   border-radius: 5px 5px 0 0;    /*To affect only top corners*/
-   color: #222222;
-   position: relative;
-   z-index: 5;
-   color: black !important;             /*To overwrite jquery-ui.css*/
-   text-decoration: none !important;     /*To overwrite jquery-ui.css*/
-}    
-a:focus{                                /*To handle that annoing border(chrome) when item is in focus*/
- outline: none;   
+#accordion .ui-icon { 
+    display: none; 
+}
+
+#accordion p {
+    padding: 1em;
+    background: white;
+    border-bottom: 0.5pt lightgray solid;
+}
+
+.ui-accordion .ui-accordion-content {
+    padding: 1em !important;
+    border: none !important;
+}
+
+#accordion .ui-state-default {
+    color: #FFFFFF !important;   
+}
+
+#accordion .ui-state-active {
+    color: #000000 !important;   
 }

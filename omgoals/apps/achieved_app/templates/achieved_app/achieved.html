@@ -48,7 +48,6 @@
 	</script>
 </head>
 <body>
-	<div class="container">
 		<div class="container-fluid">
             <div class="row" id='header'>
                 <img id='logo' class='col-xs-1' src="{% static 'img/omgoalslogo.png' %}" />
@@ -60,23 +59,32 @@
     					<button type='button' class='btn btn-secondary'><a href="{%url 'journal'%}">Journal</a></button>
     					<button type='button' class='btn btn-secondary'><a href="{%url 'achieved_page'%}">Achieved</a></button>
                         <button id='store' type='button' class='btn btn-secondary'>Store</button>
+                        <a href="{%url 'logout'%}"><button id='logout' type='button' class='btn btn-primary'>Log Out</button></a>
                     </div>
                 </div>
             </div>
-            <div class="mid">
-            	<h3>ACHIEVED</h3>
-            	<a href="{%url 'logout'%}"><button id='logout' type='button' class='btn btn-primary'>LOGOUT</button></a>
-            </div>
-	        {%if not achieved%}
-	        	<h4> Blah Blah Work harder</h4>
-	        {%endif%}
 
-			{%for task in achieved%}
-			<div class="task  col-md-4">
-				<img class="animal_img" src="{% static 'img/'|add:task.final_image %}" value1="{{task.goal_name}}" value2="{{task.description}}" value3="{{task.completion_date}}">
-			</div>
-			{%endfor%}
+            <div class="content">
+            	<h3>ACHIEVED</h3>
+    	        {%if not achieved%}
+    	        	<h4> Blah Blah Work harder</h4>
+    	        {%endif%}
+
+    			{%for task in achieved%}
+    			<div class="task  col-md-4">
+    				<img class="animal_img" src="{% static 'img/'|add:task.final_image %}" value1="{{task.goal_name}}" value2="{{task.description}}" value3="{{task.completion_date}}">
+    			</div>
+    			{%endfor%}
+            </div>
+
+            <div id="footer">
+                <div class='col-xs-3 col-xs-offset-1'id='copyright'>
+                    &copy; OH MY GOALS 2016
+                </div>
+                <div id='socialmed' >
+                    <img src="{% static 'img/socialmediaicons.png' %}" />
+                </div>
+            </div>
 		</div>
-	</div>
 </body>
 </html>
