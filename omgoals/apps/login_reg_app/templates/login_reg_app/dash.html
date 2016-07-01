@@ -11,7 +11,12 @@
     <script type="text/javascript">
 		$(document).ready(function(){
 
+
+
 			$(document).on('click', 'img.animal_img', function(){
+
+				var milestones = $(this).attr('value');
+
 				$(this).avgrund({
 					width: 380, // max is 640px
 					height: 280, // max is 350px
@@ -27,7 +32,14 @@
 					setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
 					//onLoad: function (elem) { ... }, // set custom call before popin is inited..
 					//onUnload: function (elem) { ... }, // ..and after it was closed
-					template: " <form> <label>Do Stuff <input type='text'></label> </form>"
+					template: 
+					"<table>\
+						<tr>\
+							<th>Done</th>\
+							<th>Milestone</th>\
+							<th>Completed?</th>\
+						</tr>\
+					</table>"
 				});
 			})
 		});
@@ -98,7 +110,7 @@
 						<div id='goal_list'>
 							{% for value in goals %}
 							<div class='goal_box col-xs-4'>
-								<img class="animal_img" src="{% static 'img/'|add:value.0 %}" />
+								<img class="animal_img" src="{% static 'img/'|add:value.0 %}" value="{{value.4}}"/>
 								<div class='progress col-xs-12'>
 									<div class='bar' style="width:{{value.1}}%"></div>
 								</div>

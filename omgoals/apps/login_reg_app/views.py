@@ -66,7 +66,8 @@ def dash(request):
 		progress = Goal.goalManager.progress(goal_id)
 		name = user_goal.title
 		nextTask = Goal.goalManager.nextMilestone(goal_id)
-		goal_tuple = (animal, progress, name, nextTask)
+		all_milestones = Milestone.milestoneManager.filter(goal_id=goal_id)
+		goal_tuple = (animal, progress, name, nextTask, all_milestones)
 		print animal
 		print progress
 		goals.append(goal_tuple)
