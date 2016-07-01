@@ -129,7 +129,7 @@ def complete(request):
 	milestone_interest.save()
 	goal_ani = GoalAnimal.objects.get(goal_id=goal)
 	current_animal = json.dumps(GoalAnimal.objects.get(goal_id=goal).current_image)
-	if (Goal.goalManager.progress(goal_id) > 33 and Goal.goalManager.progress(goal_id) < 66):
+	if (Goal.goalManager.progress(goal_id) > 33 and Goal.goalManager.progress(goal_id) <= 66):
 		current_animal = current_animal.replace('1', '2')
 		goal_ani.current_image = current_animal[1:-1].decode('unicode-escape')
 		goal_ani.save()
