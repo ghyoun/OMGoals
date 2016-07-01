@@ -19,9 +19,11 @@ class GoalManager(models.Manager):
         count = 0
         for milestone in milestones:
             if (milestone.completed == True):
-                count = count + 1
+                count += 1
         try:
-            return (round(count/total, 1)) * 100
+            print count
+            print (count*100)/total
+            return (count*100)/total
         except:
             return 1
 

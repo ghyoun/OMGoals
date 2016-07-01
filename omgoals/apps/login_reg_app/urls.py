@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^profile$', views.profile, name='profile'),
     url(r'^editprofile$', views.edit_profile, name='edit_profile'),
     url(r'^editname$', views.edit_name, name='edit_name'),
-    url(r'^editemail$', views.edit_email, name='edit_email')
+    url(r'^editemail$', views.edit_email, name='edit_email'),
+    url(r'^complete$', views.complete, name='complete_milestone'),
 ]

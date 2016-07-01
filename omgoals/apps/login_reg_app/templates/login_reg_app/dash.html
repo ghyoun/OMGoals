@@ -15,7 +15,17 @@
 
 			$(document).on('click', 'img.animal_img', function(){
 
-				var milestones = $(this).attr('value');
+				var completed = $(this).data('done');
+				var title = $(this).data('title');
+				var goal_id = $(this).data('goal');
+
+
+
+				var addedRows = ''
+				for (var i = 0; i < completed.length; i++) {
+					addedRows = addedRows.concat("<tr><td>" + completed[i] + "</td><td>" + title[i] + "</td><td><form action='/complete' method='post'><input type='hidden' name='title' value='"+ title[i] + "'><input type='hidden' name='goal_id' value='"+ goal_id + "'><input type='submit' value='Completed'></form></td></tr>");
+
+				}
 
 				$(this).avgrund({
 					width: 380, // max is 640px
@@ -32,15 +42,17 @@
 					setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
 					//onLoad: function (elem) { ... }, // set custom call before popin is inited..
 					//onUnload: function (elem) { ... }, // ..and after it was closed
-					template: 
-					"<table>\
-						<tr>\
-							<th>Done</th>\
-							<th>Milestone</th>\
-							<th>Completed?</th>\
-						</tr>\
+					template:
+					"<table id='myTable'>\
+						<tr style='border-bottom:1px solid black;'>\
+							<th style='padding-right:40px;'>Done</th>\
+							<th style='padding-right:100px;'>Milestone</th>\
+							<th style='padding-right:40px;'>Completed?</th>\
+						</tr>"+ addedRows + "\
 					</table>"
 				});
+
+
 			})
 		});
 	</script>
@@ -77,7 +89,7 @@
 						<h5>{{today}}</h5>
 					</div>
 					<div class='col-xs-12' id='stats'>
-						<p>Making gainz for 69 days</p>
+						<p>Making gains for 60 days</p>
 						<p>Days of consecutive progress: 4</p>
 						<p>Goals completed: 10</p>
 						<p>Goals in progress: 4</p>
@@ -110,7 +122,7 @@
 						<div id='goal_list'>
 							{% for value in goals %}
 							<div class='goal_box col-xs-4'>
-								<img class="animal_img" src="{% static 'img/'|add:value.0 %}" value="{{value.4}}"/>
+								<img class="animal_img" src="{% static 'img/'|add:value.0 %}" data-done="{{value.4|safe}}" data-title='{{value.5|safe}}' data-goal='{{value.6|safe}}'/>
 								<div class='progress col-xs-12'>
 									<div class='bar' style="width:{{value.1}}%"></div>
 								</div>
