@@ -46,6 +46,12 @@
 			})
 		});
 	</script>
+    <style type="text/css">
+        div.task{
+            margin-top: 2%;
+            margin-left: 2%;
+        }
+    </style>
 </head>
 <body>
 		<div class="container-fluid">
@@ -67,11 +73,11 @@
             <div class="content">
             	<h3>ACHIEVED</h3>
     	        {%if not achieved%}
-    	        	<h4> Blah Blah Work harder</h4>
+    	        	<h4> Blah Blah Work harder. Nothing Achieved</h4>
     	        {%endif%}
 
     			{%for task in achieved%}
-    			<div class="task  col-md-4">
+    			<div class="task  col-md-2">
     				<img class="animal_img" src="{% static 'img/'|add:task.final_image %}" value1="{{task.goal_name}}" value2="{{task.description}}" value3="{{task.completion_date}}">
     			</div>
     			{%endfor%}
